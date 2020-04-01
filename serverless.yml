@@ -1,0 +1,20 @@
+service: rescue-call
+
+provider:
+  name: twilio
+  config:
+    accountSid: ${env:TWILIO_ACCOUNT_SID}
+    authToken: ${env:TWILIO_AUTH_TOKEN}
+
+  dependencies:
+	twilio: '*'
+  environment: ${env:TWILIO_RUNTIME_ENV, 'dev'}
+
+plugins:
+  - '@twilio-labs/serverless-twilio-runtime'
+
+functions:
+  makeRescueCall:
+    handler: ./build/handler
+    path: /rescue-call
+    access: public

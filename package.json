@@ -1,0 +1,15 @@
+{
+  "name": "call-me-now",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+	"build": "tsc"
+  },
+  "dependencies": {
+    "@twilio-labs/serverless-runtime-types": "^1.1.8",
+    "@twilio-labs/serverless-twilio-runtime": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
