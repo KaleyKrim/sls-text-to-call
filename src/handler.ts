@@ -1,11 +1,20 @@
-import '@twilio-labs/serverless-runtime-types';
 import { ServerlessFunctionSignature } from '@twilio-labs/serverless-runtime-types/types';
-import Dialogue from "./lib/Dialogue";
 
-export const handler: ServerlessFunctionSignature = ((context, event, callback) => {
-	const twiml = new Twilio.twiml.VoiceResponse().say(new Dialogue().getRandom());
+export const handler: ServerlessFunctionSignature<{}, { Body: string, From: string, To: string }> = (async (context, event, callback) => {
+	const path = Runtime.getAssets()['/lib/Dialogue'].path;
+	const dialoguesModule = await import(path);
+
+	const callTwiml = new Twilio.twiml.VoiceResponse().say(new dialoguesModule.Dialogue().getRandom()).toString();
+	const client = context.getTwilioClient();
+	await client.calls.create({
+		from: event["To"].slice(1),
+		to: event["From"].slice(1),
+		twiml: callTwiml,
+	});
+
+	const msgTwiml = new Twilio.twiml.MessagingResponse().message('got you!').toString();	
 	callback(
 		null,
-		twiml
+		msgTwiml
 	)
 });
