@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-	"build": "tsc"
+    "build": "tsc"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.8.3",
     "@twilio-labs/serverless-runtime-types": "^1.1.8",
     "@twilio-labs/serverless-twilio-runtime": "^1.0.0"
-  },
-  "devDependencies": {
-    "typescript": "^3.8.3"
   }
 }
