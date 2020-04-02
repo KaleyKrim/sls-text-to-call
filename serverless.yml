@@ -7,8 +7,9 @@ provider:
     authToken: ${env:TWILIO_AUTH_TOKEN}
 
   dependencies:
-	twilio: '*'
-  environment: ${env:TWILIO_RUNTIME_ENV, 'dev'}
+  twilio: '*'
+  serverless-runtime-types: '*'
+  # environment: ${env:TWILIO_RUNTIME_ENV, 'dev'}
 
 plugins:
   - '@twilio-labs/serverless-twilio-runtime'
@@ -18,3 +19,10 @@ functions:
     handler: ./build/handler
     path: /rescue-call
     access: public
+
+resources:
+  assets:
+    dialogue:
+      filePath: build/lib/Dialogue.js
+      path: /lib/Dialogue
+      access: private
