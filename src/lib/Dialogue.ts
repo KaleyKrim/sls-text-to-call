@@ -1,4 +1,4 @@
-export default class {
+export class Dialogue {
 	dialogues = [
 		"testingtesting",
 		"aa aa"
