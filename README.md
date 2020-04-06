@@ -14,7 +14,7 @@ Built with Twilio Runtime and Serverless Framework.
 
 To deploy:
 
-1. Set `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` environment variables.
+1. Set `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` environment variables in `.env` file
 
 2. Compile typescript / deploy serverless functions
 ```
