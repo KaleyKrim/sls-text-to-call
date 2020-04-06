@@ -1,5 +1,9 @@
 service: rescue-call
 
+plugins:
+    - '@twilio-labs/serverless-twilio-runtime'
+    - serverless-dotenv-plugin
+
 provider:
   name: twilio
   config:
@@ -11,9 +15,6 @@ provider:
   dependencies:
   twilio: '*'
   serverless-runtime-types: '*'
-
-plugins:
-  - '@twilio-labs/serverless-twilio-runtime'
 
 functions:
   makeRescueCall:

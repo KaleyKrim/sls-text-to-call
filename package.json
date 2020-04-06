@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-	"build": "tsc",
-	"deploy": "tsc && serverless deploy"
+    "build": "tsc",
+    "deploy": "tsc && serverless deploy"
   },
   "dependencies": {},
   "devDependencies": {
-    "typescript": "^3.8.3",
     "@twilio-labs/serverless-runtime-types": "^1.1.8",
-    "@twilio-labs/serverless-twilio-runtime": "^1.0.0"
+    "@twilio-labs/serverless-twilio-runtime": "^1.0.0",
+    "serverless-dotenv-plugin": "^2.3.2",
+    "typescript": "^3.8.3"
   }
 }
