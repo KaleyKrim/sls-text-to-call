@@ -1,6 +1,6 @@
 # On Demand Call Service
 
-A convenient service to rescue you from unwanted human interaction.
+A convenient service that responds to SMS messages with a voice call to help you dodge unwanted human interaction.
 
 ## How it works
 
