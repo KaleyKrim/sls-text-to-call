@@ -7,7 +7,7 @@ provider:
     authToken: ${env:TWILIO_AUTH_TOKEN}
     environment: ${env:TWILIO_RUNTIME_ENV, 'dev'}
   environmentVars:
-    TWIML_URL: http://rescue-call-6344-${env:TWILIO_RUNTIME_ENV, 'dev'}.twil.io/call-contents
+    TWIML_URL: http://rescue-call-xxxx-${env:TWILIO_RUNTIME_ENV, 'dev'}.twil.io/call-contents
   dependencies:
   twilio: '*'
   serverless-runtime-types: '*'
